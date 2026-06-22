@@ -1,0 +1,94 @@
+/* ============================================================
+   Nursing AI — IMH brand theme
+   Navy + vivid azure + teal accent. Flat, professional, but
+   with real colour (no washed-out greys).
+   ============================================================ */
+:root {
+    --navy:     #0E2F5C;   /* IMH dark navy — headings, sidebar */
+    --azure:    #1565C0;   /* vivid primary blue — buttons, links */
+    --azure-d:  #0D4DA0;
+    --teal:     #009BAB;   /* IMH teal accent */
+    --ink:      #14253B;   /* body text */
+    --muted:    #5A6E82;   /* secondary text */
+    --line:     #D6E0EC;   /* hairline borders */
+    --surface:  #FFFFFF;
+    --soft:     #EEF4FB;   /* subtle blue fills */
+}
+
+.stApp { background: var(--surface); }
+#MainMenu, footer { visibility: hidden; }
+
+/* ---------- Enlarge the IMH logo (corner + sidebar) ---------- */
+[data-testid="stLogo"] { height: 3.4rem !important; width: auto !important; margin: .2rem 0 .4rem 0; }
+/* the sidebar copy can be a touch bigger */
+section[data-testid="stSidebar"] [data-testid="stLogo"] { height: 4rem !important; }
+
+.block-container { padding-top: 2rem; max-width: 940px; }
+
+/* ---------- Page header ---------- */
+.page-head { margin-bottom: 1.4rem; padding-bottom: .85rem; border-bottom: 2px solid var(--azure); }
+.page-head h1 { font-size: 1.6rem; font-weight: 700; color: var(--navy); margin: 0; letter-spacing: -.01em; }
+.page-head p  { color: var(--muted); font-size: .92rem; margin: .35rem 0 0 0; }
+
+/* ---------- Sidebar ---------- */
+section[data-testid="stSidebar"] { background: var(--soft); border-right: 1px solid var(--line); }
+section[data-testid="stSidebar"] .brand { font-weight: 700; font-size: 1.05rem; color: var(--navy); }
+section[data-testid="stSidebar"] .brand-sub { color: var(--teal); font-size: .8rem; font-weight: 600; margin-top: 2px; }
+
+/* selected nav item gets a vivid accent */
+section[data-testid="stSidebar"] label[data-baseweb="radio"] { padding: .15rem 0; }
+
+/* ---------- Buttons ---------- */
+.stButton > button {
+    background: var(--azure);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: .44rem 1.05rem;
+    font-weight: 600;
+    font-size: .9rem;
+    transition: background .12s ease;
+}
+.stButton > button:hover { background: var(--azure-d); color: #fff; }
+.stButton > button:focus { box-shadow: none; }
+
+.stButton > button[kind="secondary"] {
+    background: #fff; color: var(--azure); border: 1px solid var(--azure);
+}
+.stButton > button[kind="secondary"]:hover { background: var(--soft); color: var(--azure-d); }
+
+/* ---------- Chat ---------- */
+.stChatMessage { border: none !important; box-shadow: none !important; padding: .15rem 0; }
+div[data-testid="stChatMessageContent"] { font-size: .98rem; line-height: 1.6; }
+
+/* ---------- Source line ---------- */
+.src-line { color: var(--muted); font-size: .8rem; margin-top: .55rem;
+            border-left: 3px solid var(--teal); padding-left: .55rem; }
+.src-line b { color: var(--navy); font-weight: 600; }
+
+/* ---------- Question cards ---------- */
+.q-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--azure);
+    border-radius: 10px;
+    padding: 1rem 1.15rem;
+    margin-bottom: .85rem;
+    box-shadow: 0 1px 3px rgba(14, 47, 92, .06);
+}
+.q-card .q-text   { font-weight: 650; color: var(--navy); font-size: .98rem; }
+.q-card .q-answer { color: #2c3e52; margin-top: .5rem; font-size: .92rem; }
+.q-card ul        { margin: .4rem 0 .2rem 1.1rem; color: #2c3e52; font-size: .92rem; }
+.q-card .q-answer b { color: var(--navy); }
+
+.q-meta {
+    margin-top: .7rem; padding-top: .6rem; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: .8rem; display: flex; align-items: center; gap: .45rem;
+}
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.dot-easy   { background: #1E9E57; }
+.dot-medium { background: #E08A00; }
+.dot-hard   { background: #D23A2C; }
+
+div[data-baseweb="input"] input, div[data-baseweb="select"] { border-radius: 7px; }
+hr { border-color: var(--line); }

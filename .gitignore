@@ -1,0 +1,54 @@
+# ===========================================================
+#  Nursing AI Assistant — .gitignore
+# ===========================================================
+
+# --- Virtual environments (huge; each machine builds its own via setup.bat) ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Python caches ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Model weights / caches (heavy — downloaded by setup_models.py, never committed) ---
+# Hugging Face + Torch caches normally live in your user profile, not here,
+# but ignore any that end up in the project just in case.
+*.bin
+*.safetensors
+*.gguf
+*.pt
+*.pth
+*.onnx
+.cache/
+hf_cache/
+huggingface/
+models/
+
+# --- Generated / per-user runtime data ---
+data/audio/
+data/uploads/
+data/question_bank.db
+*.log
+
+# --- Streamlit secrets / local config ---
+.streamlit/secrets.toml
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ===========================================================
+#  Knowledge base vector store (data/vector_db/)
+# ===========================================================
+# By default it IS committed (~7 MB) so the app works right after cloning.
+# If your repo is PUBLIC or the documents are sensitive/copyrighted
+# (e.g. textbook content, internal slides), uncomment the next line to keep
+# it out of git — colleagues would then rebuild it via the Documents page.
+# data/vector_db/
